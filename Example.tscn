@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/interactive-music-g3/audio_stream_player_interactive.gd" type="Script" id=1]
 [ext_resource path="res://Example.gd" type="Script" id=2]
 [ext_resource path="res://test_music/tower_full_high.wav" type="AudioStream" id=3]
 [ext_resource path="res://test_music/tower_full_low.wav" type="AudioStream" id=4]
+[ext_resource path="res://static/add_and_set_tracks.png" type="Texture" id=5]
+[ext_resource path="res://static/add_node.png" type="Texture" id=6]
 
 [node name="Example" type="Control"]
 anchor_right = 1.0
@@ -25,16 +27,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -403.0
-margin_top = -139.5
-margin_right = 403.0
-margin_bottom = 139.5
+margin_left = -446.0
+margin_top = -271.0
+margin_right = 446.0
+margin_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_constants/separation = 26
 
 [node name="Label" type="Label" parent="VBx"]
-margin_right = 806.0
+margin_right = 892.0
 margin_bottom = 48.0
 text = "Interactive Music Demo
 by Danny Garay (dannygaray60)
@@ -43,70 +45,95 @@ align = 1
 
 [node name="HBxFade" type="HBoxContainer" parent="VBx"]
 margin_top = 74.0
-margin_right = 806.0
-margin_bottom = 105.0
+margin_right = 892.0
+margin_bottom = 98.0
 size_flags_vertical = 3
 custom_constants/separation = 35
 alignment = 1
 
 [node name="Label" type="Label" parent="VBx/HBxFade"]
-margin_left = 339.0
-margin_top = 8.0
-margin_right = 373.0
-margin_bottom = 22.0
+margin_left = 382.0
+margin_top = 5.0
+margin_right = 416.0
+margin_bottom = 19.0
 text = "Fade:"
 
 [node name="LineEdit" type="LineEdit" parent="VBx/HBxFade"]
-margin_left = 408.0
-margin_right = 466.0
-margin_bottom = 31.0
+margin_left = 451.0
+margin_right = 509.0
+margin_bottom = 24.0
 text = "2.0"
 align = 1
 
 [node name="HBxPlay" type="HBoxContainer" parent="VBx"]
-margin_top = 131.0
-margin_right = 806.0
-margin_bottom = 163.0
+margin_top = 124.0
+margin_right = 892.0
+margin_bottom = 144.0
 size_flags_vertical = 3
 custom_constants/separation = 52
 
 [node name="HighPlay" type="Button" parent="VBx/HBxPlay"]
-margin_right = 377.0
-margin_bottom = 32.0
+margin_right = 420.0
+margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Play High Tracks"
 
 [node name="LowPlay" type="Button" parent="VBx/HBxPlay"]
-margin_left = 429.0
-margin_right = 806.0
-margin_bottom = 32.0
+margin_left = 472.0
+margin_right = 892.0
+margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Play Low Tracks"
 
 [node name="HbxStop" type="HBoxContainer" parent="VBx"]
-margin_top = 189.0
-margin_right = 806.0
-margin_bottom = 221.0
+margin_top = 170.0
+margin_right = 892.0
+margin_bottom = 190.0
 size_flags_vertical = 3
 custom_constants/separation = 52
 
 [node name="StopAll" type="Button" parent="VBx/HbxStop"]
-margin_right = 806.0
-margin_bottom = 32.0
+margin_right = 892.0
+margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Stop All"
 
 [node name="Hbx" type="HBoxContainer" parent="VBx"]
-margin_top = 247.0
-margin_right = 806.0
-margin_bottom = 279.0
+margin_top = 216.0
+margin_right = 892.0
+margin_bottom = 230.0
 size_flags_vertical = 3
 custom_constants/separation = 52
 
 [node name="LinkButton" type="LinkButton" parent="VBx/Hbx"]
-margin_right = 184.0
-margin_bottom = 32.0
-text = "How to Use: README.md file"
+margin_right = 438.0
+margin_bottom = 14.0
+text = "How to Use: (https://github.com/dannygaray60/interactive-music-g3)"
+
+[node name="Hbx2" type="HBoxContainer" parent="VBx"]
+margin_top = 256.0
+margin_right = 892.0
+margin_bottom = 542.0
+size_flags_vertical = 3
+custom_constants/separation = 52
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBx/Hbx2"]
+margin_right = 336.0
+margin_bottom = 286.0
+rect_min_size = Vector2( 336, 286 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBx/Hbx2"]
+margin_left = 388.0
+margin_right = 892.0
+margin_bottom = 286.0
+rect_min_size = Vector2( 504, 0 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
 
 [connection signal="pressed" from="VBx/HBxPlay/HighPlay" to="." method="_on_HighPlay_pressed"]
 [connection signal="pressed" from="VBx/HBxPlay/LowPlay" to="." method="_on_LowPlay_pressed"]
