@@ -1,6 +1,7 @@
 # Interactive Music Addon for Godot 3
 ### Tested in Godot 3.5
 This is a small addon to allow to create interactive music. For example a song can change intensity (from "loud/energetic" to "low/quiet") depending on what the developer requires.
+[![Demo on YT](https://img.youtube.com/vi/WS1VSjghe8w/0.jpg)](https://www.youtube.com/watch?v=WS1VSjghe8w)
 
 ***
 
