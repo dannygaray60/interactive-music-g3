@@ -1,48 +1,48 @@
 # Interactive Music Addon for Godot 3
 ### Tested in Godot 3.5
-Este es un pequeño addon para permitir crear música interactiva. Por ejemplo que una canción cambie de intensidad (de "fuerte/enérgica" a "bajo/tranquilo") dependiendo de lo que requiera el desarollador.
+This is a small addon to allow to create interactive music. For example a song can change intensity (from "loud/energetic" to "low/quiet") depending on what the developer requires.
 
 ***
 
 # How to use
-Copia la carpeta 'addons/interactive-music-g3' a la carpeta 'addons' de tu proyecto y después activa el plugin desde los ajustes del proyecto.
-Una vez activado, podrás agregar un nodo 'AudioStreamPlayerInteractive'
-![](add.png)
-El siguiente paso es agregar todos los tracks que compongan tu canción interactiva como hijos del nodo AudioStreamPlayerInteractive.
-![](add-edittracks.png)
-Luego debes definir cuales tracks se usarán para gameplay (high_tracks) y cuales serán los que usarás para cosas más tranquilas como los diálogos o al entrar a interiores (low_tracks). Para esto usarás el número index del nodo (comenzando desde el cero), puedes definir todas las pistas que quieras o incluso usar una misma pista en los dos diferentes modos (high-low) y lo debes separar con una coma.
-Una vez realizado esto, podrás utilizar los métodos que incorpora este plugin.
+Copy the `addons/interactive-music-g3` folder to the `addons` folder of your project and then activate the plugin from the project settings.
+Once activated, you will be able to add an `AudioStreamPlayerInteractive` node.
+![](https://raw.githubusercontent.com/dannygaray60/interactive-music-g3/main/static/add_node.png)
+The next step is to add all the tracks that make up your interactive song as children of the AudioStreamPlayerInteractive node.
+![](https://raw.githubusercontent.com/dannygaray60/interactive-music-g3/main/static/add_and_set_tracks.png)
+Then you must define which tracks will be used for gameplay (high_tracks) and which will be used for quieter things like dialogues or when entering interiors (low_tracks). For this you will use the index number of the node (starting from zero), you can define as many tracks as you want or even use the same track in the two different modes (high-low) and you must separate it with a comma.
+Once this is done, you will be able to use the methods included in this plugin.
 
 ***
 
 # Methods
 ---
 ### void: play(opt : String = "high", fadein_time: float = 1.0)
-Reproduce todas las pistas definidas en 'high' o 'low' Por ejemplo:
-'$AudioStreamPlayerInteractive.play("high")'
-'$AudioStreamPlayerInteractive.play("low", 5.5)'
-Puedes añadir opcionalmente un número flotante para definir el fadein/out del volumen.
+Plays all tracks set to `high` or `low` For example:
+`$AudioStreamPlayerInteractive.play("high")`
+`$AudioStreamPlayerInteractive.play("low", 5.5)`
+You can optionally add a float number to define the volume fadein/out.
 ### void: stop(opt : String = "high", fadeout_time: float = 1.0)
-Reproduce todas las pistas definidas en 'high' o 'low'. Puedes añadir opcionalmente un fadeout.
+Stops all tracks set to `high` or `low`. You can optionally add a fadeout.
 ### void: play_track(track:int, fadein_time: float = 1.0)
-Reproduce uno de los tracks en específico indicando su número index.
+Plays one of the specific tracks indicating its index number.
 ### void: stop_track(track:int, fadeout_time: float = 1.0)
-Detiene uno de los tracks en específico indicando su número index.
+Stops one of the specific tracks indicating its index number.
 ### void: play_all(fadein_time : float = 1.0)
-Reproduce todas las pistas que sean hijos del nodo AudioStreamPlayerInteractive. Puedes añadir opcionalmente fadein.
+Plays all tracks that are children of the AudioStreamPlayerInteractive node. You can optionally add fadein.
 ### void: stop_all(fadeout_time : float = 1.0)
-Detiene todas las pistas que sean hijos del nodo AudioStreamPlayerInteractive. Puedes añadir opcionalmente fadeout.
+Stops all tracks that are children of the AudioStreamPlayerInteractive node. You can optionally add fadeout.
 ### bool: is_stopped()
-Retorna 'true' si todas las pistas del nodo AudioStreamPlayerInteractive están detenidas. Si al menos una de ellas está siendo reproducida retornará 'false'.
+Returns `true` if all tracks of the AudioStreamPlayerInteractive node are stopped. If at least one of them is playing it will return `false`.
 
 ***
 
-# Cosas que pueden fallar
-- Si no se define de manera correcta los tracks o parámetros al usar este plugin pueden provocar bugs debido a que no se toleran los errores.
-- También debo admitir que el fadein/out no es del todo preciso, esto debido a cómo se manejan los valores de decibelios respecto a un número flotante.
+# Things that can fail
+- If you don`t define the tracks or parameters correctly when using this plugin it can cause bugs because errors are not tolerated.
+- I must also admit that the fadein/out is not quite accurate, this is due to how decibel values are handled with respect to a floating number.
 
-# Cosas que faltan
-Hice este plugin para uso personal de mi juego (Toziuha Night), por lo que si hay alguna caracteristica que piensas que falte, ¡eres bienvenido a agregar más funcionalidades a este plugin!
+# Things that are missing
+I made this plugin for personal use for my game (Toziuha Night), so if there are any features you think are missing, you are welcome to add more functionality to this plugin!
 
 # Credits
 
